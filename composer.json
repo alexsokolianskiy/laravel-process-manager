@@ -1,5 +1,5 @@
 {
-    "name": "alex/laravel-process-manager",
+    "name": "alexsokolianskiy/laravel-process-manager",
     "description": "Laravel linux process manager",
     "type": "library",
     "require": {
