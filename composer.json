@@ -1,0 +1,15 @@
+{
+    "name": "alex/laravel-process-manager",
+    "description": "Laravel linux process manager",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^9.11"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Sokolianskiy",
+            "email": "alexsokolianskiy@gmail.com"
+        }
+    ]
+}
