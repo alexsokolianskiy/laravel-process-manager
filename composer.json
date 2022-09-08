@@ -1,15 +1,27 @@
 {
-    "name": "alexsokolianskiy/laravel-process-manager",
-    "description": "Laravel linux process manager",
+    "name": "alexsokolianskiy/linux-process-manager",
+    "description": "Linux process manager",
     "type": "library",
     "require": {
-        "laravel/framework": "^9.11"
+        "php": "^8"
     },
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alexsokolianskiy\\ProcessManager\\": "src",
+            "Alexsokolianskiy\\ProcessManager\\Tests\\": "tests"
+        },
+        "files": [
+       
+        ]
+    },
     "authors": [
         {
             "name": "Alex Sokolianskiy",
             "email": "alexsokolianskiy@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }
