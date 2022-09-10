@@ -10,10 +10,10 @@ class CommandRunner
     public function run(string $command)
     {
         $output = shell_exec($command);
-        if (strpos('Operation not permitted', $output) === false) {
+        if (!mb_stripos($output, 'Operation not permitted')) {
             return $output;
         }
-
+   
         throw new OperationNotPermitted("$command [Operation not permitted]");
     }
     

@@ -1,5 +1,3 @@
-
-
 <?php
 
 namespace Alexsokolianskiy\ProcessManager\Utils\Linux\Exceptions;

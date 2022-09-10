@@ -4,6 +4,7 @@ namespace Alexsokolianskiy\ProcessManager\Tests\Unit;
 
 use Alexsokolianskiy\ProcessManager\LinuxProcessManager;
 use Alexsokolianskiy\ProcessManager\Tests\TestCase;
+use Alexsokolianskiy\ProcessManager\Utils\Linux\Exceptions\OperationNotPermitted;
 use Alexsokolianskiy\ProcessManager\Utils\Linux\ProcessList;
 
 class ProcessTest extends TestCase
@@ -29,5 +30,18 @@ class ProcessTest extends TestCase
     $lpm = new LinuxProcessManager();
     $processes = $lpm->grep($splash);
     $this->assertContainsOnlyInstancesOf(ProcessList::class, $processes);
+  }
+
+  public function test_should_throw_operation_not_permitted()
+  {
+    $onp = 'Operation not permitted';
+    $err = null;
+    $lpm = new LinuxProcessManager();
+    try {
+      $lpm->grep($onp);
+    } catch (\Exception $e) {
+      $err = $e;
+    }
+    $this->assertInstanceOf(OperationNotPermitted::class, $err);
   }
 }
