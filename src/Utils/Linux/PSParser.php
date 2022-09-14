@@ -5,7 +5,7 @@ namespace Alexsokolianskiy\ProcessManager\Utils\Linux;
 class PSParser
 {
     protected array $parsedOutput = [];
-    public function __construct(private string $output)
+    public function __construct(private ?string $output = '')
     {
         $exploded = explode("\n", $this->output);
         array_shift($exploded);
