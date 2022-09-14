@@ -23,7 +23,7 @@ class LinuxProcessManager extends ProcessManager
     public function getPid(string $pattern): int|null
     {
         $grepResult = $this->grep($pattern);
-        if ($grepResult) {
+        if ($grepResult && $grepResult[0]->user) {
             return $grepResult[0]->PID;
         }
         return null;

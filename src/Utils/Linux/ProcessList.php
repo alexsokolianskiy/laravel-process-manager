@@ -4,15 +4,15 @@ namespace Alexsokolianskiy\ProcessManager\Utils\Linux;
 
 class ProcessList
 {
-    public string $user;
-    public string $PID;
-    public string $CPU;
-    public string $MEM;
-    public string $TTY;
-    public string $stat;
-    public string $start;
-    public string $time;
-    public string $command;
+    public ?string $user;
+    public ?string $PID;
+    public ?string $CPU;
+    public ?string $MEM;
+    public ?string $TTY;
+    public ?string $stat;
+    public ?string $start;
+    public ?string $time;
+    public ?string $command;
 
     public static function fromString(string $params)
     {
