@@ -38,6 +38,7 @@ class LinuxProcessManager extends ProcessManager
 
     public function kill(int $pid, Signal $signal = Signal::SIGKILL): void
     {
-        $this->commandRunner->run("kill -s $signal $pid");
+        $sig = $signal->value;
+        $this->commandRunner->run("kill -s $sig $pid");
     }
 }
