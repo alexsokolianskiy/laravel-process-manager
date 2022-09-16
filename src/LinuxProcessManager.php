@@ -41,4 +41,10 @@ class LinuxProcessManager extends ProcessManager
         $sig = $signal->value;
         $this->commandRunner->run("kill -s $sig $pid");
     }
+
+    public function killall(string $pattern): void
+    {
+        $escpattern = escapeshellarg($pattern);
+        $this->commandRunner->run("pkill -f $escpattern");
+    }
 }
