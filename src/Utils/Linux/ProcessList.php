@@ -2,6 +2,8 @@
 
 namespace Alexsokolianskiy\ProcessManager\Utils\Linux;
 
+use Exception;
+
 class ProcessList
 {
     public ?string $user;
@@ -28,7 +30,9 @@ class ProcessList
             $obj->start = $rowItems[8];
             $obj->time = $rowItems[9];
             $obj->command = implode(' ', array_slice($rowItems, 10, count($rowItems)));
+            return $obj;
         }
-        return $obj;
+
+        throw new Exception('failed to parse string');
     }
 }

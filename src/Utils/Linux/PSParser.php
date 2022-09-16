@@ -2,6 +2,8 @@
 
 namespace Alexsokolianskiy\ProcessManager\Utils\Linux;
 
+use Exception;
+
 class PSParser
 {
     protected array $parsedOutput = [];
@@ -17,7 +19,11 @@ class PSParser
         $list = [];
 
         foreach ($this->parsedOutput as $row) {
-            $list[] = ProcessList::fromString($row);
+            try {
+                $list[] = ProcessList::fromString($row);
+            } catch (Exception $e) {
+                continue;
+            }
         }
 
         return $list;
